@@ -3,103 +3,103 @@ const debug = true;
 
 const container = {
     TABLE_VARIABLE: document.getElementById("tableVariableContainer"),
-	WEREFORM: document.getElementById("wereformContainer"),
-	PRIMARY_WEAPON: document.getElementById("primaryWeaponContainer"),
-	IS_ONE_HANDED: document.getElementById("isOneHandedContainer"),
-	PRIMARY_WEAPON_IAS: document.getElementById("primaryWeaponIASContainer"),
-	SECONDARY_WEAPON: document.getElementById("secondaryWeaponContainer"),
-	SECONDARY_WEAPON_IAS: document.getElementById("secondaryWeaponIASContainer"),
-	IAS: document.getElementById("IASContainer"),
-	FANATICISM: document.getElementById("fanaticismContainer"),
-	BURST_OF_SPEED: document.getElementById("burstOfSpeedContainer"),
-	WEREWOLF: document.getElementById("werewolfContainer"),
-	MAUL: document.getElementById("maulContainer"),
-	FRENZY: document.getElementById("frenzyContainer"),
-	HOLY_FREEZE: document.getElementById("holyFreezeContainer"),
-	SLOWED_BY: document.getElementById("slowedByContainer"),
-	DECREPIFY: document.getElementById("decrepifyContainer"),
-	CHILLED: document.getElementById("chilledContainer"),
+	變形: document.getElementById("wereformContainer"),
+	主手武器: document.getElementById("primaryWeaponContainer"),
+	是否單手: document.getElementById("isOneHandedContainer"),
+	主手武器攻速: document.getElementById("primaryWeaponIASContainer"),
+	副手武器: document.getElementById("secondaryWeaponContainer"),
+	副手武器攻速: document.getElementById("secondaryWeaponIASContainer"),
+	裝備IAS: document.getElementById("IASContainer"),
+	狂熱靈氣: document.getElementById("fanaticismContainer"),
+	速度爆發: document.getElementById("burstOfSpeedContainer"),
+	狼人變化: document.getElementById("werewolfContainer"),
+	槌擊: document.getElementById("maulContainer"),
+	狂亂連擊: document.getElementById("frenzyContainer"),
+	神聖冰凍: document.getElementById("holyFreezeContainer"),
+	被緩速: document.getElementById("slowedByContainer"),
+	衰老詛咒: document.getElementById("decrepifyContainer"),
+	被冰緩: document.getElementById("chilledContainer"),
 	TABLE: document.getElementById("tableContainer")
 };
 
 const select = {
     TABLE_VARIABLE: document.getElementById("tableVariableSelect"),
-	CHARACTER: document.getElementById("characterSelect"),
-	WEREFORM: document.getElementById("wereformSelect"),
-	SKILL: document.getElementById("skillSelect"),
-	PRIMARY_WEAPON: document.getElementById("primaryWeaponSelect"),
-	SECONDARY_WEAPON: document.getElementById("secondaryWeaponSelect")
+	角色: document.getElementById("characterSelect"),
+	變形: document.getElementById("wereformSelect"),
+	技能: document.getElementById("skillSelect"),
+	主手武器: document.getElementById("primaryWeaponSelect"),
+	副手武器: document.getElementById("secondaryWeaponSelect")
 };
 
 const number = {
-    PRIMARY_WEAPON_IAS: document.getElementById("primaryWeaponIAS"),
-	SECONDARY_WEAPON_IAS: document.getElementById("secondaryWeaponIAS"),
-	IAS: document.getElementById("IAS"),
-	FANATICISM: document.getElementById("fanaticismLevel"),
-	BURST_OF_SPEED: document.getElementById("burstOfSpeedLevel"),
-	WEREWOLF: document.getElementById("werewolfLevel"),
-	MAUL: document.getElementById("maulLevel"),
-	FRENZY: document.getElementById("frenzyLevel"),
-	HOLY_FREEZE: document.getElementById("holyFreezeLevel"),
-	SLOWED_BY: document.getElementById("slowedByLevel")
+    主手武器攻速: document.getElementById("primaryWeaponIAS"),
+	副手武器攻速S: document.getElementById("secondaryWeaponIAS"),
+	裝備IAS: document.getElementById("IAS"),
+	狂熱靈氣: document.getElementById("fanaticismLevel"),
+	速度爆發: document.getElementById("burstOfSpeedLevel"),
+	狼人變化: document.getElementById("werewolfLevel"),
+	槌擊: document.getElementById("maulLevel"),
+	狂亂連擊: document.getElementById("frenzyLevel"),
+	神聖冰凍: document.getElementById("holyFreezeLevel"),
+	被緩速: document.getElementById("slowedByLevel")
 };
 
 const checkbox = {
-    IS_ONE_HANDED: document.getElementById("isOneHanded"),
-	DECREPIFY: document.getElementById("decrepify"),
-	CHILLED: document.getElementById("chilled")
+    是否單手: document.getElementById("isOneHanded"),
+	衰老詛咒: document.getElementById("decrepify"),
+	被冰緩: document.getElementById("chilled")
 };
 
 const char = {
-    AMAZON: 0,
-    ASSASSIN: 1,
-    BARBARIAN: 2,
-    DRUID: 3,
-    NECROMANCER: 4,
-    PALADIN: 5,
-    SORCERESS: 6,
+    亞馬遜: 0,
+    刺客: 1,
+    野蠻人: 2,
+    德魯依: 3,
+    死靈法師: 4,
+    聖騎士: 5,
+    魔法使: 6,
 	// mercs
-    ROGUE_SCOUT: 7,
-    DESERT_MERCENARY: 8,
-    BASH_BARBARIAN: 9,
-    FRENZY_BARBARIAN: 10
+    A1小妹: 7,
+    A2長槍伯: 8,
+    猛擊野蠻傭兵: 9,
+    狂亂野蠻傭兵: 10
 };
 
 const wf = {
-    HUMAN: 0,
-    WEREBEAR: 1,
-    WEREWOLF: 2
+    人形: 0,
+    熊人變化R: 1,
+    狼人變化: 2
 };
 
 const tv = {
 	EIAS: 0,
-    IAS: 1,
-    FANATICISM: 2,
-    PRIMARY_WEAPON_IAS: 3,
-    SECONDARY_WEAPON_IAS: 4,
-    BURST_OF_SPEED: 5,
-    WEREWOLF: 6,
-    FRENZY: 7,
-    MAUL: 8
+    裝備IAS: 1,
+    狂熱靈氣: 2,
+    主手武器攻速: 3,
+    副手武器攻速: 4,
+    速度爆發: 5,
+    狼人變化: 6,
+    狂亂連擊: 7,
+    槌擊: 8
 };
 
 export function isTableVariableSkill(variable) {
-	return variable == tv.FANATICISM || variable == tv.BURST_OF_SPEED || variable == tv.WEREWOLF
-		|| variable == tv.MAUL || variable == tv.FRENZY;
+	return variable == tv.狂熱靈氣 || variable == tv.速度爆發 || variable == tv.狼人變化
+		|| variable == tv.槌擊 || variable == tv.狂亂連擊;
 }
 
 export function getTableVariableSkill(variable) {
 	switch(variable) {
-		case tv.FANATICISM:
-			return skill.FANATICISM;
-		case tv.BURST_OF_SPEED:
-			return skill.BURST_OF_SPEED;
-		case tv.WEREWOLF:
-			return skill.WEREWOLF;
-		case tv.MAUL:
-			return skill.MAUL;
-		case tv.FRENZY:
-			return skill.FRENZY;
+		case tv.狂熱靈氣:
+			return skill.狂熱靈氣;
+		case tv.速度爆發:
+			return skill.速度爆發;
+		case tv.狼人變化:
+			return skill.狼人變化;
+		case tv.槌擊:
+			return skill.槌擊;
+		case tv.狂亂連擊:
+			return skill.狂亂連擊;
 		default:
 			return null;
 	}
